@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <title> Food Fun</title>
+    <!-- Main Template CSS File -->
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<!--Header-->
+<header style="background-color: rgb(131, 47, 179); opacity: 0.8; position: fixed; top:0;">
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Gallery</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="faq.html">Faq</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<h2 class="heading">Book a Table</h2>
+<div class="reserve" id="reservation">
+    <div class="container">
+        <img src="images/side-view-table-served-with-pilaf-with-dried-fruits-served-stewed-meat-with-herbs-bowls_140725-12864.jpg"
+            alt="Restaurant Image" class="restaurant-image">
+        <div class="booking-form-container">
+            <form id="bookingForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+
+                <button type="button" onclick="submitForm()">Book Now</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function submitForm() {
+        alert('Table booked successfully! We look forward to welcoming you.');
+        document.getElementById('bookingForm').reset();
+    }
+
+</script>
+<hr>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="social-icons">
+            <a href="#" target="_blank"><img src="images/blue-social-media-logo_197792-1759.avif" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="images/instagram-icon_1057-2227.jpg" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="images/blue-social-media-logo_197792-2420.jpg" alt="Twitter"></a>
+        </div>
+
+        <div class="contact-info">
+            <h2>Opening Hours</h2>
+            <p>Monday - Friday: 9:00 AM - 10:00 PM</p>
+            <p>Saturday - Sunday: 10:00 AM - 11:00 PM</p>
+        </div>
+
+        <div class="get-in-touch">
+            <h2>Get in Touch</h2>
+            <p>Email: foodfun@restaurant.com</p>
+            <p>Phone: 0078839383 </p>
+        </div>
+
+        <ul class="links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Online Shopping</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Services</a></li>
+        </ul>
+    </div>
+    <p id="PFooter">&copy; 2023 Food Fun. All rights reserved.</p>
+</footer>
+
+
+</html>

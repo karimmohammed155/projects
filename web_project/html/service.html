@@ -1,0 +1,180 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Food Fun</title>
+    <!-- Main Template CSS File -->
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<style>
+    #feedback {
+        background-color: white;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #feedback h2 {
+        color: #333;
+    }
+
+    #feedbackForm {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #feedbackForm label {
+        font-weight: bold;
+    }
+
+    #feedbackForm input,
+    #feedbackForm textarea {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    #feedbackForm button {
+        background-color: rgb(131, 47, 179);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    #feedbackForm button:hover {
+        background-color: rgb(180, 91, 232);
+        color: white;
+    }
+
+    #feedbackMessage {
+        margin-top: 10px;
+        color: #333;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <header style="background-color: rgb(131, 47, 179); opacity: 0.8; position: fixed; top: 0;">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="index.html">Gallery</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="faq.html">Faq</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="container" id="services">
+        <h2 class="heading">Our Services</h2>
+        <br>
+        <div class="services">
+            <div class="service">
+                <img src="images/service 1.jpg" alt="Service 1">
+                <h4>Online Ordering</h4>
+                <p>Order your favorite dishes online and have them delivered to your doorstep.</p>
+                <a class="more" href="#">More</a>
+            </div>
+            <div class="service">
+                <img src="images/service 2.jpeg" alt="Service 2">
+                <h4>Table Reservations</h4>
+                <p>Reserve a table in advance to ensure a great dining experience at our restaurant.</p>
+                <a class="more" href="#">More</a>
+            </div>
+            <div class="service">
+                <img src="images/service 3.webp" alt="Service 3">
+                <h4>Best Quality</h4>
+                <p>Enjoy a variety of delicious food options in our restaurant.</p>
+                <a class="more" href="#">More</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <section id="feedback">
+        <h2>Give Us Your Feedback</h2>
+        <form id="feedbackForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="feedbackText">Feedback:</label>
+            <textarea id="feedbackText" name="feedbackText" rows="4" required></textarea>
+
+            <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+        </form>
+        <p id="feedbackMessage"></p>
+    </section>
+    <hr>
+
+    <footer>
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="#" target="_blank"><img src="images/blue-social-media-logo_197792-1759.avif"
+                        alt="Facebook"></a>
+                <a href="#" target="_blank"><img src="images/instagram-icon_1057-2227.jpg" alt="Instagram"></a>
+                <a href="#" target="_blank"><img src="images/blue-social-media-logo_197792-2420.jpg" alt="Twitter"></a>
+            </div>
+
+            <div class="contact-info">
+                <h2>Opening Hours</h2>
+                <p>Monday - Friday: 9:00 AM - 10:00 PM</p>
+                <p>Saturday - Sunday: 10:00 AM - 11:00 PM</p>
+            </div>
+
+            <div class="get-in-touch">
+                <h2>Get in Touch</h2>
+                <p>Email: foodfun@restaurant.com</p>
+                <p>Phone: 0078839383 </p>
+            </div>
+
+            <ul class="links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Online Shopping</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </div>
+        <p id="PFooter">&copy; 2023 Food Fun. All rights reserved.</p>
+    </footer>
+    <script>
+        function clearForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('feedbackText').value = '';
+        }
+
+        function submitFeedback() {
+            const name = document.getElementById('name').value;
+            const feedbackText = document.getElementById('feedbackText').value;
+            const feedbackMessage = document.getElementById('feedbackMessage');
+
+            if (name && feedbackText) {
+                feedbackMessage.textContent = `Thank you, ${name}! We appreciate your feedback: ${feedbackText}`;
+                clearForm();
+            } else {
+                feedbackMessage.textContent = 'Please fill in all fields before submitting.';
+            }
+        }
+    </script>
+</body>
+
+</html>
